@@ -4,7 +4,10 @@
 \usepackage{graphicx}
 \usepackage{fancyhdr}
 \usepackage{setspace}
-\usepackage{natbib}
+% \usepackage{natbib}
+\usepackage[american]{babel}
+\usepackage{csquotes}
+\usepackage[style=apa, backend=biber]{biblatex}
 
 \pagestyle{fancy}
 
@@ -24,7 +27,9 @@
   \fancyfoot[C]{\thepage}
 }
 
-%\setlength{\headheight}{14.5pt}
+\setlength{\headheight}{14.5pt}
+
+\addbibresource{MiniProjectReport.bib}
 
 \begin{document}
 \begin{titlepage}
@@ -92,10 +97,10 @@ The objectives for developing the Rest Countries Application are as follows:
 \end{itemize}
 
 \section{Features of the System}
-The project is intended to produce an interactive system so that the user can feel interested to use the system and this is achieved by implementing interactivity especially in the design of the system, a Graphical User Interface (GUI), and portability.
+The project is intended to produce an interactive system so that the user can feel interested to use the system. This this is achieved by implementing interactivity especially in the design of the system, a Graphical User Interface (GUI), and portability.
 
 \subsection{Interactivity}
-The definition of interaction is quite broad. \citet{aoki2000taxonomy} stated that interactivity of a medium refers to a characteristic of communication settings a medium can create that allows users to interact.\\
+The definition of interaction is quite broad. \autocite{aoki2000taxonomy} stated that interactivity of a medium refers to a characteristic of communication settings a medium can create that allows users to interact.\\
 \indent
 Throughout the process of interaction design, the developer must be aware of key aspects in their design that influence emotional response in target users. The need for products to convey positive emotions and avoid negative ones is critical to any product success. These aspects include positive, negative, motivational, learning, creative, social and persuasive influences. A method that can be used to convey such aspects is the use of expressive interfaces.\\
 \indent
@@ -123,7 +128,8 @@ The system is a full web application and this enables the system to be viewed an
 
 \chapter{Methodology}
 
-\bibliography{MiniProjectReport}
-\bibliographystyle{apalike}
+% \bibliography{MiniProjectReport}
+% \bibliographystyle{apalike}
+\printbibliography
 
 \end{document}
