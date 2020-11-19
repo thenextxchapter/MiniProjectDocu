@@ -1,0 +1,129 @@
+\documentclass[twoside, a4paper, 12pt]{report}
+
+\usepackage[inner=3cm, outer=3cm, a4paper]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{natbib}
+
+\pagestyle{fancy}
+
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
+\fancyhf{} % clear the headers
+\fancyhead[RO, LE]{%
+   % The chapter number only if it's greater than 0
+   \ifnum\value{chapter}>0 \chaptername\ \thechapter. \fi
+   % The chapter title
+   \leftmark}  
+\fancyfoot[C]{\thepage}
+
+\fancypagestyle{plain}{
+  \renewcommand{\headrulewidth}{0pt}
+  \fancyhf{}
+  \fancyfoot[C]{\thepage}
+}
+
+%\setlength{\headheight}{14.5pt}
+
+\begin{document}
+\begin{titlepage}
+	\centering
+	\includegraphics[width=0.2\textwidth]{VeritasUniversityLogo}\par\vspace{1cm}
+	{\scshape \LARGE Veritas University Abuja \par}
+	{\scshape \Large (The Catholic University of Nigeria) \par}
+	\vspace{1cm}
+	{\huge Implementing a REST API for a Description of all Countries in the World Using Vue.js to 		Define the User Interface \par}
+	\vspace{1.5cm}
+	{\Large Ata, Chinonso Anita \par}
+	{\Large VUG/CSC/17/1914 \par}
+	\vspace{0.5cm}
+	Submitted to \par
+	\vspace{0.5cm}
+	{\Large The Department of Computer and Information Technology College of Natural and Applied 			Sciences \par}
+	\vspace{1cm}
+	{\Large In Partial Fulfilment of the Requirement of Bachelors Degree of Computer Science \par}
+	
+	\vfill
+	
+	{\Large \today \par}
+\end{titlepage}
+
+\begin{abstract}
+Abstract goes here...
+\end{abstract}
+
+\chapter*{Acknowledgements}
+Acknowledgement goes here...
+
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+\onehalfspacing
+
+\chapter{Introduction}
+In the world today, having facts at your fingertips is very useful and important. With search engines like Google, life has been made easier as we do not have to visit libraries or spend money on books to get the most basic facts or knowledge. We now have all the information in the world in one place, and it is easy to gain access to it by just typing in a keyword or two and we have what we want.\\
+\indent
+What this application will do is to take this functionality further by putting all the countries in the world and their basic information such as their capital, population, continent, etc. in one place. Just like you would have in google, you could just go to the search box and type the name of any country in the world and you get information about that country that you're looking for.\\
+\indent
+As Technology is being incorporated in our everyday lives and things are being made easier each day it shouldn't stop us from still looking for ways to improve on these technologies to further make things easier in order to keep the world moving forward.
+%\indent
+%The application was built based on a REST API called REST Countries which provided the information about the countries. It was also built by mainly using a popular JavaScript framework called Vue.js together with the primary state manager for Vue.js which is Vuex. Routing was also implemented in this project to enable the functionality of moving from one page to another and back and it was done using vue-router which is the official router for Vue.js. For the styling, SASS which is a CSS preprocessor was used to implement the styling of the web application.\\
+
+%\section{Motivation}
+
+%The idea of creating this project was to provide a simple and easy way to view different countries from a small perspective.\\
+
+%The project introduces a new online-based system of application for any user which will facilitate the user to search for any country of their choice and view some information about the country that was searched for. The system has a login and registration component that allows for access control therefore, only users that have an account with the application and are logged in can view the actual application and interact with it.\\
+
+%The application is built based on a REST API called ``REST Countries'' which is a simple web API for getting information about the world's nations via REST calls and the API provided all the information about the countries used in the application.
+
+\section{Aims and Objectives}
+By having a new interactive system that consists of a layout that displays all the countries in the world, the system can help users who just need quick and simple information about any country. It can also be used by students for assignments related to the subject and it can also be a fun way to learn about different countries in the world.\\
+\indent
+Thus, the application aims to produce a simple, interesting, and easy to use application that the user can refer to and rely on at anytime to give them the basic facts about any country in the world.\\
+\indent
+The objectives for developing the Rest Countries Application are as follows:
+\begin{itemize}
+\item To design a simple system and interface that can easily be viewed by any user to search for any country in the world and view simple information about the country that was searched for.
+\item To develop a system that is accessible anywhere and on any device
+\end{itemize}
+
+\section{Features of the System}
+The project is intended to produce an interactive system so that the user can feel interested to use the system and this is achieved by implementing interactivity especially in the design of the system, a Graphical User Interface (GUI), and portability.
+
+\subsection{Interactivity}
+The definition of interaction is quite broad. \citet{aoki2000taxonomy} stated that interactivity of a medium refers to a characteristic of communication settings a medium can create that allows users to interact.\\
+\indent
+Throughout the process of interaction design, the developer must be aware of key aspects in their design that influence emotional response in target users. The need for products to convey positive emotions and avoid negative ones is critical to any product success. These aspects include positive, negative, motivational, learning, creative, social and persuasive influences. A method that can be used to convey such aspects is the use of expressive interfaces.\\
+\indent
+In software, the use of of dynamic icons, animations and sound can help communicate a state of operation which in turn will create a sense of interactivity. Interface aspects such as fonts, colour palette, and graphical layouts can also influence an interface's perceived effectiveness.
+
+\subsection{Graphical User Interface}
+A graphical user interface (GUI) is a type of user interface item that allows people to interact with programs in more ways than typing. A GUI offers graphical icons, and visual indicators, as opposed to text-based interfaces, typed command labels or text navigation to fully represent the information and actions available to a user. The actions are usually performed through direct manipulation of the graphical elements.\\
+\indent
+There are several principles that need to be considered when dealing with a GUI.
+\begin{itemize}
+\item Layout\\
+The interface should be a series of areas on the screen that are used consistently for different purposes.
+\item Content Awareness\\
+Users should always be aware of where they are in the system and what information is being displayed.
+\item Aesthetic\\
+Interface should be functional and inviting to users through careful use of white space, colours, and fonts. In this project for example, there is an option for the user to change the colour theme from light mode to dark mode and vice versa which makes the user feel like they are in control.
+\item User Experience\\
+The interface should be built in such a way that it is both easy to use and easy to learn. Novice users or infrequent users of software will prefer ease of learning and frequent users will prefer ease of use.
+\item Consistency\\
+Consistency in interface design enables users to predict what will happen before they perform a function. It is one of the important elements in ease of learning, ease of use, and aesthetic.
+\end{itemize}
+
+\subsection{Responsiveness}
+The system is a full web application and this enables the system to be viewed anywhere no matter the device and the design is also fully responsive so the layout is still engaging whether the application is viewed on a small device or a very large device like a television. 
+
+\chapter{Methodology}
+
+\bibliography{MiniProjectReport}
+\bibliographystyle{apalike}
+
+\end{document}
