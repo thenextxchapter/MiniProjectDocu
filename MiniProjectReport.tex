@@ -62,6 +62,7 @@ Acknowledgement goes here...
 
 \pagenumbering{roman}
 \tableofcontents
+\listoffigures
 \newpage
 \pagenumbering{arabic}
 
@@ -126,6 +127,35 @@ Consistency in interface design enables users to predict what will happen before
 The system is a full web application and this enables the system to be viewed anywhere no matter the device and the design is also fully responsive so the layout is still engaging whether the application is viewed on a small device or a very large device like a television. 
 
 \chapter{Methodology}
+The 'Rest Countries' is implemented using the waterfall model of system development life cycle as the project methodology. This methodology is selected because of its advantage which allows the requirements to be specified at the start of the project and for proper documentation.\\
+\indent
+The Waterfall Methodology is a linear approach to software development. It is also known as the 'Traditional Approach' because it is time-tested and easy to understand.\autocite{adenowo2013software}. The waterfall methodology breaks up the software development projects into steps: planning and analysis (Requirement Analysis), design and implementation, testing, system deployment, and maintenance.
+
+\begin{figure} [h]
+	\centering
+	\includegraphics[width=0.5\textwidth]{waterfallmodelimg}
+	\caption{Waterfall Methodology}
+	\label{waterfall-methodology}
+\end{figure}
+
+\section{Project Activities}
+
+\subsection{Requirement Analysis}
+In this phase, all the possible requirements of the system such as functional requirements, programming tools to be used, feasibility, and scope are captured and documented. The overall project is intended to come out with an interactive system that lets the user search for any country in the world and get information about that country.\\
+\indent
+At the beginning of the requirements analysis phase, the first thing that has been discussed is the programming tool that will be used which is Vue.js for the client-side, Node js with Express for the server-side and MongoDb for the database.
+
+\subsection{Design and Implementation}
+In the design phase, the actual database or file structure, user interface, system inputs and outputs is designed. Thereafter, the actual developement of the system takes place. A basic unit test is also conducted to verify that each component meets its requirement before handing the developed code over to the testing phase.
+
+\subsection{Testing}
+In this phase the system integration is tested regarding quality and functional aspects. In this case, the system will be tested by different users on their devices to make sure everything is working as it should. Furthermore, any response will be taken into consideration to improve the system in future.
+
+\subsection{System Deployment}
+In this phase when the application has been fully tested, the whole system will be transferred from development mode to build mode. The system will then be brought into shippable state. The database will be set up on MongoDb Atlas and the application itself will be deployed to Heroku.
+
+\subsection{Maintenance}
+After the product has been released, there might still be some problems in the user environment. Fixing those issues will require regular maintenance and patches to be released.
 
 \printbibliography
 
