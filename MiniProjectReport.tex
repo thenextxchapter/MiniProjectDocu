@@ -169,14 +169,47 @@ The basic process of system analysis involves three steps:
 	\item Identify improvements
 	\item Define the requirements for the new system
 \end{itemize}
-\indent
-In the last chapter the main user requirement was identified which is to come out with an interactive system that lets the user search for any country in the world and get basic information about that country. In this chapter we will focus on the system and software requirements needed for the implementation of the new system. Also the software develpment tools which will be used to acheive the specified requirements.
+% \indent
+% In the last chapter the main user requirement was identified which is to come out with an interactive system that lets the user search for any country in the world and get basic information about that country. In this chapter we will focus on the system and software requirements needed for the implementation of the new system. Also the software develpment tools which will be used to acheive the specified requirements.
 
-\section{Interpretation of User Requirements}
+% \section{Interpretation of User Requirements}
+% \begin{itemize}
+% 	\item The system has to be web-based to allow the user to access it from any device.
+% 	\item The system will be connected to an external Application Programming Interface (API) that will provide the information about the countries.
+% 	\item The system will need a database because the the system will feature a login and registration component and user information has to be stored and retrieved later.
+% \end{itemize}
+
+\section{Requirement Analysis}
+A requirement is simply a statement of what the system must do or what characterisitics it needs to have. During a systems development project, requirements will be created that describes what the business needs (business requirements); what the users need to do (user requirements); what the software should do (functional requirements); characterisitics the system should have (nonfunctional requirements); and how the system should be built (system requirements).\\
+\indent
+This section includes the requirements of the system that are categorized into user requirements, functional requirements and non-functional requirements.
+
+\subsection{User Requirements}
+User requirements are the users' expectation from the system as well as the characterisitics it possess in order to fully, effectively and efficiently interact with the system. These requirements are as follows:
 \begin{itemize}
-	\item The system has to be web-based to allow the user to access it from any device.
-	\item The system will be connected to an external Application Programming Interface (API) that will provide the information about the countries.
-	\item The system will need a database because the the system will feature a login and registration component and user information has to be stored and retrieved later.
+	\item The system should be user friendly and interactive.
+	\item The system should be accessible on all platforms.
+	\item The system should allow the administrator to authenticate and validate user information by comparing the credentials that the user has provided and what is existing in the database.
+	\item The system should be secured by passwords.
+	\item The system should be able to display information about all the countries in the world.
+\end{itemize}
+
+\subsection{Functional Requirements}
+Functional requirements capture the intended services, functions or tasks that the system provides and they include the following:
+\begin{itemize}
+	\item The system should authenticate users by allowing only users with correct user name and password to access the system.
+	\item The system should be able to register users with detailed information and create accounts for the users.
+	\item With this system, the user should be able to view information about any country in the world.
+\end{itemize}
+
+\subsection{Non-Functional Requirments}
+These are requirements that are not directly concerned with the specific behaviour of the system but rather the criteria that can be used to judge the operation of the system and these include:
+\begin{itemize}
+	\item Maintainability of the system is easy and cheap to maintain and work with.
+	\item Accessissility of the system is guaranteed to only authorised users by use of passwords and user name.
+	\item The system should operate on all platforms and on any device.
+	\item The system is portable and lightweight and does not use large storage space as well having no impact on the platform performance.
+	\item The system interface is simple and interactive.
 \end{itemize}
 
 \section{High-level Constituent Parts}
@@ -227,6 +260,99 @@ Express.js also referred to as Express, is a free and open-source back-end web a
 MongoDB is a cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas.
 
 \chapter{System Design}
+\section{Introduction}
+The purpose of system analysis is to discover the business needs and requirements including functional requirements and non-functional requirements while the purpose of system design is to decide how the new system will operate.\\
+\indent
+System design consists of design activities that produce system specifications which satisfy the functional requirements that have been developed in the system analysis process. System design is basically the structural implementation of system analysis. A successful design builds on what was learned or gathered from the system analysis and leads to smooth implementation by creating a clear plan of what needs to be done.\\
+\indent
+The system design determines the overall system architecture which consists of a set of physical processing components, hardware, software, people, and the communication among them that will satisfy the system's essential requirements. The various procedure of usage of the new system is given here, i.e. how to, what to and on what the system will be used on. The importance of the design is to enable the system designer or researcher to know the cost of consequence of the product on the user and developer. In that the effectiveness of the system will not be obsolete %(Investing much and having less productivity).\\
+\indent
+In this section the following tools were used to describe the system: context diagram and data flow diagram, flow chart and entity relationship diagrams.
+
+\section{Data Flow Diagram (DFD)}
+Data flow diagramming is a technique that diagrams the systems processes and the data that pass among them. The main focus of data flow diagrams is the processes or activities that are performed in the system. Data flow diagrams model objects, associations, and activities by describing how data flows between and around various objects, they illustrate how data is processed by a system in terms of inputs and outputs. They are pipelines through which packets of information flow. Data flow diagrams work on the premise that for every activity there is some communication, transference or flow that can be described as a data element.\\
+\indent
+Data flow diagrams describe what activities are occuring to fulfill a business relationship or accomplish a task, not how these activities are to be performed. It shows the logical sequence of associations and activities, not physical processes.
+
+\subsection{Context Diagram}
+The first DFD in every business process model, whether a manual system or a computerized system, is the context diagram. The context diagram shows the entire system in context with its environment. The context diagram shows the overall business process as just one process (i.e., the system itself) and shows the data flows to and from external entities.
+
+\begin{figure} [h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{CFD.png}
+	\caption{Context Flow Diagram}
+	\label{fig:context-flow-diagram}
+\end{figure}
+
+\subsection{Level 1 Data FLow Diagram}
+Level 1 DFD is an expansion of the context diagram that shows more processes and how the users interact with the system in terms of inputs and outputs. This is the detailed description of the processes that occur in the system while related to an external entity.
+
+\begin{figure} [h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{DFD.png}
+	\caption{Level 1 Data Flow Diagram}
+	\label{fig:level-1-data-flow-diagram}
+\end{figure}
+
+\subsection{Flow Chart}
+A flowchart is a type of diagram that represents a work flow or process. They are used in analysing, designing, documenting or managing a process in various fields.\\
+\indent
+Figure \ref{fig:context-flow-diagram} shows a flowchart representing a systemic flow of how users interact with the system.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{flowchart.png}
+	\caption{Flow Chart Diagram}
+	\label{fig:flow-chart-diagram}
+\end{figure}
+
+\section{Data Modelling and Entity Relationships}
+\subsection{Data Modelling}
+A data model is a formal way of representing the data that are used and created by a system; it illustrates people, places, or things about which information is captured and how they are related to each other.\\
+\indent
+In system design, analysts draw a physical data model to reflect how the data will be physically be stored in the databases and files.
+
+\subsection{Entity Relationship Diagram (ERD)}
+An entity relationship diagram is a picture which shows information that is created, stored, and used by a system. On an ERD, similar kinds of information are listed together and placed inside boxes called entities. Lines are drawn between entities to represent relationships among the data, and special symbols are added to the diagram to communicate high-level business rules that need to be supported by the system.
+
+\subsubsection{Entities}
+Entities are the basic building blocks of a data model. It is a person, place, event, or thing about which data is collected.\\
+The entities in this application include:
+\begin{itemize}
+	\item Country
+	\item Continent
+	\item State/Province
+	\item Currency
+	\item Language
+\end{itemize}
+
+\subsubsection{Relationships}
+Relationships are associations between entities and they are shown by lines that connect the entities together.
+Figure \ref{fig:relationships} below show the description of the various relationships between the entities with their cardinalities.
+
+\begin{figure} [h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{relationships.png}
+	\caption{The Relationships Between the Entities}
+	\label{fig:relationships}
+\end{figure}
+
+Where:
+\begin{itemize}
+	\item A Continent has many countries so it represents a One-to-Many Relationship
+	\item A Country has many States/Provinces so it represents a One-to-Many Relationship
+	\item A Country has only one Currency so it represents a One-to-One relationship
+	\item A Country can have one or more Languages so it represents a One-to-Many relationship
+\end{itemize}
+
+\begin{figure} [h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{ERD.png}
+	\caption{Entity Relationship Diagram}
+	\label{fig:ERD}
+\end{figure}
+
+\chapter{Implementation}
 \section{Introduction}
 
 \printbibliography
