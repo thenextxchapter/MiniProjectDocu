@@ -73,16 +73,6 @@ In the world today, having facts at your fingertips is very useful and important
 What this application will do is to take this functionality further by putting all the countries in the world and their basic information such as their capital, population, continent, etc. in one place. Just like you would have in google, you could just go to the search box and type the name of any country in the world and you get information about that country that you're looking for.\\
 \indent
 As Technology is being incorporated in our everyday lives and things are being made easier each day it shouldn't stop us from still looking for ways to improve on these technologies to further make things easier in order to keep the world moving forward.
-%\indent
-%The application was built based on a REST API called REST Countries which provided the information about the countries. It was also built by mainly using a popular JavaScript framework called Vue.js together with the primary state manager for Vue.js which is Vuex. Routing was also implemented in this project to enable the functionality of moving from one page to another and back and it was done using vue-router which is the official router for Vue.js. For the styling, SASS which is a CSS preprocessor was used to implement the styling of the web application.\\
-
-%\section{Motivation}
-
-%The idea of creating this project was to provide a simple and easy way to view different countries from a small perspective.\\
-
-%The project introduces a new online-based system of application for any user which will facilitate the user to search for any country of their choice and view some information about the country that was searched for. The system has a login and registration component that allows for access control therefore, only users that have an account with the application and are logged in can view the actual application and interact with it.\\
-
-%The application is built based on a REST API called ``REST Countries'' which is a simple web API for getting information about the world's nations via REST calls and the API provided all the information about the countries used in the application.
 
 \section{Aims and Objectives}
 By having a new interactive system that consists of a layout that displays all the countries in the world, the system can help users who just need quick and simple information about any country. It can also be used by students for assignments related to the subject and it can also be a fun way to learn about different countries in the world.\\
@@ -169,15 +159,6 @@ The basic process of system analysis involves three steps:
 	\item Identify improvements
 	\item Define the requirements for the new system
 \end{itemize}
-% \indent
-% In the last chapter the main user requirement was identified which is to come out with an interactive system that lets the user search for any country in the world and get basic information about that country. In this chapter we will focus on the system and software requirements needed for the implementation of the new system. Also the software develpment tools which will be used to acheive the specified requirements.
-
-% \section{Interpretation of User Requirements}
-% \begin{itemize}
-% 	\item The system has to be web-based to allow the user to access it from any device.
-% 	\item The system will be connected to an external Application Programming Interface (API) that will provide the information about the countries.
-% 	\item The system will need a database because the the system will feature a login and registration component and user information has to be stored and retrieved later.
-% \end{itemize}
 
 \section{Requirement Analysis}
 A requirement is simply a statement of what the system must do or what characterisitics it needs to have. During a systems development project, requirements will be created that describes what the business needs (business requirements); what the users need to do (user requirements); what the software should do (functional requirements); characterisitics the system should have (nonfunctional requirements); and how the system should be built (system requirements).\\
@@ -238,26 +219,15 @@ The database will be managed by the administrator and it will have the following
 	\item The software will be able to display data gotten from API
 \end{itemize}
 
-\section{Technologies to be Used}
-It is recommended to use a Web-based technology for the system (using Vue.js for the client-side and Node js with Express and MongoDb for the server-side). The advantage of using web-based technologies is:
+\section{Technology to be Used}
+It is recommended to use a Web-based technology for the system. The advantage of using web-based technologies is listed below:
 \begin{itemize}
 	\item It is easy to use (with user-friendly interfaces)
 	\item It is free (doesn't require any liscence)
 	\item It is cheaper
 	\item It is easier to manage and maintain
+	\item It can be accessible on any device.
 \end{itemize}
-
-\subsection{Vue.js}
-Commonly referred to as Vue, Vue.js is an open-source front-end JavaScript framework for building interfaces and single-page applications. It features an incrementally adpatable architecture that focuses on declarative rendering and component composition.
-
-\subsection{Node.js}
-Node.js is an open-source, cross-platform, back-end, JavaScript runtime environment that executes JavaScript code outside the browser. Node.js lets developers use JavaScript to write command line tools and for server-side scripting—running scripts server-side to produce dynamic web page content before the page is sent to the user's web browser.
-
-\subsection{Express.js}
-Express.js also referred to as Express, is a free and open-source back-end web application framework for Node.js. It is designed for building web applications and APIs.
-
-\subsection{MongoDB}
-MongoDB is a cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas.
 
 \chapter{System Design}
 \section{Introduction}
@@ -354,6 +324,79 @@ Where:
 
 \chapter{Implementation}
 \section{Introduction}
+Implementation is the stage in the project where the theoretical design is turned into a working system. System implementation is the phase where the application is realised. It involves careful planning, investigation of the current system and its constraints on implementation. The implementation process begins with preparing a plan for the implementation of the system and then proceeds to the activities to be carried out such as creating a mockup or wireframe and then writing the code and then on to the deployment of the application.\\
+\indent
+Implementation is the final and the most important phase. The most critical stage in acheiving a successful new system is giving the users confidence that the new system will work and be effective. The system can only be implemented after thorough testing is done and it is found to be working according to the specifications.
+
+\section{System Specification}
+The application was built based on a REST API called ``REST Countries" which is a simple web API for getting information about the world's nations via REST calls and the API provided the information about the countries in the application.\\ 
+\indent
+The application was built by mainly using a popular JavaScript framework called \emph{Vue.js}. Vue.js is an open-source front-end JavaScript framework for building interfaces and single-page applications. It features an incrementally adpatable architecture that focuses on declarative rendering and component composition.\\ 
+\indent
+A state manager called \emph{Vuex} which is the primary state manager for Vue.js was used in the application to store data that was going to be used across the components for easy retrieval. Routing was also implemented in this project to enable the functionality of moving from one page to another and back and it was done mainly using \emph{vue-router} which is the official router for Vue.js. For the styling, \emph{SASS} which is a CSS preprocessor was used to implement the styling of the web application.\\
+\indent
+Node.js was used together with Express.js to develop the server-side of the application. Node.js which is an open-source, cross-platform, back-end, JavaScript runtime environment that executes JavaScript code outside the browser. Node.js lets developers use JavaScript to write command line tools and for server-side scripting to produce dynamic web page content before the page is sent to the user's browser.\\
+\indent
+Express.js also referred to as Express, is a free and open-source back-end web application framework for Node.js. It is designed for building web applications and APIs.\\
+\indent
+MongoDB was used as the database application used to store the user information. MongoDB is a cross-platform document-oriented database program. It is classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas.
+
+\section{Description of the User Interface}
+The application has the following pages:
+
+\subsection{Login/Register Page}
+The application has been designed to ensure that access to the application can only be granted to authenticated users. The user is required to enter a valid username and pasword before access can be granted. Upon entering the right credentials, the user is directed to relevant sections and can now use the application (see Figure \ref{fig:login_page}). If a user is not registered in the system then the user is required to register to have an account so that the user can gain access to the system (see Figure \ref{fig:register_page}).
+
+\begin{figure} 
+	\centering
+	\includegraphics[width=1.0\textwidth]{LoginPage.png}
+	\caption{Login Page}
+	\label{fig:login_page}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{RegisterPage.png}
+	\caption{Register Page}
+	\label{fig:register_page}
+\end{figure}
+
+\subsection{The Home Page}
+The home page displays all the countries in cards. It also features a search box that lets the user type in the name of any country to be searched for and the results are shown in real-time (see Figure \ref{fig:search}). There is also a dropdown feature that enables the user to filter the countries by their continents such as Africa, Asia, etc. (see Figure \ref{fig:home_page})
+
+\begin{figure} [h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{Home Page.png}
+	\caption{Home Page}
+	\label{fig:home_page}
+\end{figure}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{search.png}
+	\caption{Home Page}
+	\label{fig:search}
+\end{figure}
+
+\subsection{The Descriptions Page}
+When a card on the home page is clicked, the user is automatically redirected to the descriptions page and this page displays the full information about the particular country that was selected (see Figure \ref{fig:descriptions_page}).
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1.0\textwidth]{DescriptionsPage.png}
+	\caption{Descriptions Page}
+	\label{fig:descriptions_page}
+\end{figure}
+
+\subsection{Colour Switcher}
+The application also features a colour switcher which enables the user to toggle a colour switch to change the the design theme of the application from light mode to dark mode (see Figure \ref{fig:darkmode}).
+
+\begin{figure} [h]
+	\centering
+	\includegraphics[width=1.0\textwidth]{darkmode.png}
+	\caption{Application in Dark Mode}
+	\label{fig:darkmode}
+\end{figure}
 
 \printbibliography
 
