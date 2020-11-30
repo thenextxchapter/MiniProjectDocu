@@ -1,5 +1,6 @@
 \documentclass[twoside, a4paper, 12pt]{report}
 
+\usepackage{alltt}
 \usepackage[inner=3cm, outer=3cm, a4paper]{geometry}
 \usepackage{graphicx}
 \usepackage{fancyhdr}
@@ -14,7 +15,7 @@
 \renewcommand{\chaptermark}[1]{\markboth{#1}{}}
 
 \fancyhf{} % clear the headers
-\fancyhead[RO, LE]{%
+\fancyhead[RE, LO]{%
    % The chapter number only if it's greater than 0
    \ifnum\value{chapter}>0 \chaptername\ \thechapter. \fi
    % The chapter title
@@ -38,28 +39,57 @@
 	{\scshape \LARGE Veritas University Abuja \par}
 	{\scshape \Large (The Catholic University of Nigeria) \par}
 	\vspace{1cm}
-	{\huge Implementing a REST API for a Description of all Countries in the World Using Vue.js to Define the User Interface \par}
-	\vspace{1.5cm}
-	{\Large Ata, Chinonso Anita \par}
-	{\Large VUG/CSC/17/1914 \par}
-	\vspace{0.5cm}
-	Submitted to \par
-	\vspace{0.5cm}
-	{\Large The Department of Computer and Information Technology College of Natural and Applied 			Sciences \par}
+	{\scshape \huge Implementing a REST API for a Description of all Countries in the World Using Vue.js to Define the User Interface \par}
 	\vspace{1cm}
-	{\Large In Partial Fulfilment of the Requirement of Bachelors Degree of Computer Science \par}
+	{\scshape \Large Ata, Chinonso Anita \par}
+	{\scshape \Large VUG/CSC/17/1914 \par}
+	\vspace{0.5cm}
+	\scshape Submitted to \par
+	\vspace{0.5cm}
+	{\scshape \Large The Department of Computer and Information Technology College of Natural and Applied 			Sciences \par}
+	\vspace{1cm}
+	{\scshape \Large In Partial Fulfillment of the Requirement of Bachelors Degree of Computer Science \par}
 	\vfill
-	{\Large \today \par}
+	{\Large December 4, 2020 \par}
 \end{titlepage}
 
-\begin{abstract}
-Abstract goes here...
-\end{abstract}
-
-\chapter*{Acknowledgements}
-Acknowledgement goes here...
-
 \pagenumbering{roman}
+
+\chapter*{Certification}
+This is to certify that this project entitled ``Implementing a REST API for a Description of all Countries in the World Using Vue.js to Define the User Interface” was carried out by Ata, Chinonso Anita with matriculation number VUG/CSC/17/1914 in the Faculty of Natural and Applied Science, Veritas University, Abuja for the award of Bachelor of Science in Computer Science.
+
+\begin{alltt}
+  \textnormal{
+    
+
+
+
+
+
+__________________                              __________________
+Student                                                           Sign and Date
+
+
+
+
+
+
+__________________                                  __________________
+Departmental SIWES Coordinator                        Sign and Date
+
+
+
+
+
+
+__________________                                  __________________
+Head of Department                                           Sign and Date
+  }
+\end{alltt}
+
+\chapter*{Dedication}
+This Mini-Project is dedicated to myself for all the hard work I put in from the beginning to the completion of the project and the writing of the report and to God for giving me the strength to take on the project and for blessing me with the knowledge to complete it.
+
 \tableofcontents
 \listoffigures
 \newpage
@@ -69,7 +99,7 @@ Acknowledgement goes here...
 
 \chapter{Introduction}
 \section{Motivation}
-In the world today, having facts at your fingertips is very useful and important. With search engines like Google, life has been made easier as we do not have to visit libraries or spend money on books to get the most basic facts or knowledge. We now have all the information in the world in one place, and it is easy to gain access to it by just typing in a keyword or two and we have what we want.\\
+In the world today, having facts at your fingertips is very useful and important. With search engines like Google, life has been made easier as we do not have to visit libraries or spend money on books to get the most basic facts or knowledge. We now have all the information in the world in one place, and it is easy to gain access to it by just typing in a keyword or two, and we have what we want.\\
 \indent
 What this application will do is to take this functionality further by putting all the countries in the world and their basic information such as their capital, population, continent, etc. in one place. Just like you would have in google, you could just go to the search box and type the name of any country in the world and you get information about that country that you're looking for.\\
 \indent
@@ -83,18 +113,18 @@ Thus, the application aims to produce a simple, interesting, and easy to use app
 The objectives for developing the Rest Countries Application are as follows:
 \begin{itemize}
 \item To design a simple system and interface that can easily be viewed by any user to search for any country in the world and view simple information about the country that was searched for.
-\item To develop a system that is accessible anywhere and on any device
+\item To develop a system that is accessible anywhere and on any device.
 \end{itemize}
 
 \section{Features of the System}
-The project is intended to produce an interactive system so that the user can feel interested to use the system. This this is achieved by implementing interactivity especially in the design of the system, a Graphical User Interface (GUI), and portability.
+The project is intended to produce an interactive system so that the user can feel interested to use the system. This is achieved by implementing interactivity especially in the design of the system, a Graphical User Interface (GUI), and responsiveness.
 
 \subsection{Interactivity}
 The definition of interaction is quite broad. \autocite{aoki2000taxonomy} stated that interactivity of a medium refers to a characteristic of communication settings a medium can create that allows users to interact.\\
 \indent
 Throughout the process of interaction design, the developer must be aware of key aspects in their design that influence emotional response in target users. The need for products to convey positive emotions and avoid negative ones is critical to any product success. These aspects include positive, negative, motivational, learning, creative, social and persuasive influences. A method that can be used to convey such aspects is the use of expressive interfaces. \autocite{kamari2011interactive} \\
 \indent
-In software, the use of of dynamic icons, animations and sound can help communicate a state of operation which in turn will create a sense of interactivity. Interface aspects such as fonts, colour palette, and graphical layouts can also influence an interface's perceived effectiveness.
+In software, the use of dynamic icons, animations and sound can help communicate a state of operation which in turn will create a sense of interactivity. Interface aspects such as fonts, colour palette, and graphical layouts can also influence an interface's perceived effectiveness.
 
 \subsection{Graphical User Interface}
 A graphical user interface (GUI) is a type of user interface item that allows people to interact with programs in more ways than typing. A GUI offers graphical icons, and visual indicators, as opposed to text-based interfaces, typed command labels or text navigation to fully represent the information and actions available to a user. The actions are usually performed through direct manipulation of the graphical elements.\\
@@ -106,7 +136,7 @@ The interface should be a series of areas on the screen that are used consistent
 \item Content Awareness\\
 Users should always be aware of where they are in the system and what information is being displayed.
 \item Aesthetic\\
-Interface should be functional and inviting to users through careful use of white space, colours, and fonts. In this project for example, there is an option for the user to change the colour theme from light mode to dark mode and vice versa which makes the user feel like they are in control.
+Interface should be functional and inviting to users through careful use of white space, colours, and fonts. In this project for example, there will be an option for the user to change the colour theme from light mode to dark mode and vice versa which makes the user feel like they are in control.
 \item User Experience\\
 The interface should be built in such a way that it is both easy to use and easy to learn. Novice users or infrequent users of software will prefer ease of learning and frequent users will prefer ease of use.
 \item Consistency\\
@@ -134,42 +164,42 @@ The Waterfall Methodology is a linear approach to software development. It is al
 \subsection{Requirement Analysis}
 In this phase, all the possible requirements of the system such as functional requirements, programming tools to be used, feasibility, and scope are captured and documented.\autocite{petersen2009waterfall}. The overall project is intended to come out with an interactive system that lets the user search for any country in the world and get information about that country.\\
 \indent
-At the beginning of the requirements analysis phase, the first thing that has been discussed is the programming tool that will be used which is Vue.js for the client-side, Node js with Express for the server-side and MongoDb for the database.
+At the beginning of the requirement's analysis phase, the first thing that has been discussed is the programming tool that will be used which is Vue.js for the client-side, Node.js with Express for the server-side and MongoDB for the database.
 
 \subsection{Design and Implementation}
-In the design phase, the actual database or file structure, user interface, system inputs and outputs is designed. Thereafter, the actual developement of the system takes place. A basic unit test is also conducted to verify that each component meets its requirement before handing the developed code over to the testing phase.
+In the design phase, the actual database or file structure, user interface, system inputs and outputs is designed. Thereafter, the actual development of the system takes place. A basic unit test is also conducted to verify that each component meets its requirement before handing the developed code over to the testing phase.
 
 \subsection{Testing}
-In this phase the system integration is tested regarding quality and functional aspects. In this case, the system will be tested by different users on their devices to make sure everything is working as it should. Furthermore, any response will be taken into consideration to improve the system in future.
+In this phase the system integration is tested regarding quality and functional aspects. In this case, the system will be tested by different users on their devices to make sure everything is working as it should. Furthermore, any response will be taken into consideration to improve the system in the future.
 
 \subsection{System Deployment}
-In this phase when the application has been fully tested, the whole system will be transferred from development mode to build mode. The system will then be brought into shippable state. The database will be set up on MongoDb Atlas and the application itself will be deployed to Heroku.
+In this phase when the application has been fully tested, the whole system will be transferred from development mode to build mode. The system will then be brought into shippable state. The database will be set up on MongoDB Atlas and the application itself will be deployed to Heroku.
 
 \subsection{Maintenance}
 After the product has been released, there might still be some problems in the user environment. Fixing those issues will require regular maintenance and patches to be released.
 
 \chapter{System Analysis}
 \section{Introduction}
-The term \textit{analysis} refers to breaking a whole into parts with the goal of understanding the parts' nature, function, and interrelationships. The purpose is to give a clear picture of the system in terms of capability required and what the software system is required to do.\autocite{dennis2009systems} \\
+The term \textit{analysis} refers to breaking a whole into parts with the goal of understanding the parts' nature, function, and interrelationships. The purpose is to give a clear picture of the system in terms of capability required and what the software system is required to do. \autocite{dennis2009systems}\\
 \indent
-System Analysis is a method of problem-solving that deals with the breaksing down of a system into component parts in order to study how well the individual parts work and interact to acheive their purpose.\\
+System Analysis is a method of problem-solving that deals with the breaking down of a system into component parts in order to study how well the individual parts work and interact to achieve their purpose.\\
 \indent
 The basic process of system analysis involves three steps:
 \begin{itemize}
 	\item Understand the existing situation
 	\item Identify improvements
-	\item Define the requirements for the new system
+	\item Define the requirements for the new system.
 \end{itemize}
 
 \section{Requirement Analysis}
-A requirement is simply a statement of what the system must do or what characterisitics it needs to have. During a systems development project, requirements will be created that describes what the business needs (business requirements); what the users need to do (user requirements); what the software should do (functional requirements); characterisitics the system should have (nonfunctional requirements); and how the system should be built (system requirements).\\
+A requirement is simply a statement of what the system must do or what characteristics it needs to have. During a systems' development project, what the users need to do (user requirements); what the software should do (functional requirements); characteristics the system should have (non-functional requirements); and how the system should be built (system requirements).\\
 \indent
 This section includes the requirements of the system that are categorized into user requirements, functional requirements and non-functional requirements.
 
 \subsection{User Requirements}
-User requirements are the users' expectation from the system as well as the characterisitics it possess in order to fully, effectively and efficiently interact with the system. These requirements are as follows:
+User requirements are the users' expectation from the system as well as the characteristics it possesses in order to fully, effectively and efficiently interact with the system. These requirements are as follows:
 \begin{itemize}
-	\item The system should be user friendly and interactive.
+	\item The system should be user-friendly and interactive.
 	\item The system should be accessible on all platforms.
 	\item The system should allow the administrator to authenticate and validate user information by comparing the credentials that the user has provided and what is existing in the database.
 	\item The system should be secured by passwords.
@@ -177,18 +207,18 @@ User requirements are the users' expectation from the system as well as the char
 \end{itemize}
 
 \subsection{Functional Requirements}
-Functional requirements capture the intended services, functions or tasks that the system provides and they include the following:
+Functional requirements capture the intended services, functions or tasks that the system provides, and they include the following:
 \begin{itemize}
-	\item The system should authenticate users by allowing only users with correct user name and password to access the system.
+	\item The system should authenticate users by allowing only users with correct username and password to access the system.
 	\item The system should be able to register users with detailed information and create accounts for the users.
 	\item With this system, the user should be able to view information about any country in the world.
 \end{itemize}
 
-\subsection{Non-Functional Requirments}
+\subsection{Non-Functional Requirements}
 These are requirements that are not directly concerned with the specific behaviour of the system but rather the criteria that can be used to judge the operation of the system and these include:
 \begin{itemize}
 	\item Maintainability of the system is easy and cheap to maintain and work with.
-	\item Accessissility of the system is guaranteed to only authorised users by use of passwords and user name.
+	\item Accessibility of the system is guaranteed to only authorised users by use of passwords and username.
 	\item The system should operate on all platforms and on any device.
 	\item The system is portable and lightweight and does not use large storage space as well having no impact on the platform performance.
 	\item The system interface is simple and interactive.
@@ -196,9 +226,9 @@ These are requirements that are not directly concerned with the specific behavio
 
 \section{High-level Constituent Parts}
 \subsection{Database Management}
-The database will be managed by the administrator and it will have the following characteristics:
+The database will have the following characteristics:
 \begin{itemize}
-	\item The Database will be accessible by the software.
+	\item The Database will be accessible to the software.
 	\item The Database will allow the users to store their information.
 	\item The Database will enable user data to be queried from the database.
 \end{itemize}
@@ -212,19 +242,17 @@ The database will be managed by the administrator and it will have the following
 
 \subsection{Software Management}
 \begin{itemize}
-	\item The software will be accessible from all platforms
-	\item The software will be able to interact with the database to retrieve data.
-	\item The software will be able to add data to the database
-	\item The software will be able to retrieve data from the database
-	\item The software will be able to fetch data from the API
-	\item The software will be able to display data gotten from API
+	\item The software will be accessible from all platforms.
+	\item The software will be able to add data to the database.
+	\item The software will be able to fetch data from the API.
+	\item The software will be able to display data gotten from API.
 \end{itemize}
 
 \section{Technology to be Used}
 It is recommended to use a Web-based technology for the system. The advantage of using web-based technologies is listed below:
 \begin{itemize}
 	\item It is easy to use (with user-friendly interfaces)
-	\item It is free (doesn't require any liscence)
+	\item It is free (doesn't require any license)
 	\item It is cheaper
 	\item It is easier to manage and maintain
 	\item It can be accessible on any device.
@@ -236,14 +264,14 @@ The purpose of system analysis is to discover the business needs and requirement
 \indent
 System design consists of design activities that produce system specifications which satisfy the functional requirements that have been developed in the system analysis process. System design is basically the structural implementation of system analysis. A successful design builds on what was learned or gathered from the system analysis and leads to smooth implementation by creating a clear plan of what needs to be done.\\
 \indent
-The system design determines the overall system architecture which consists of a set of physical processing components, hardware, software, people, and the communication among them that will satisfy the system's essential requirements. The various procedure of usage of the new system is given here, i.e. how to, what to and on what the system will be used on. The importance of the design is to enable the system designer or researcher to know the cost of consequence of the product on the user and developer. In that the effectiveness of the system will not be obsolete %(Investing much and having less productivity).\\
+The system design determines the overall system architecture which consists of a set of physical processing components, hardware, software, people, and the communication among them that will satisfy the system's essential requirements. The various procedure of usage of the new system is given here, i.e. how to, what to and on what the system will be used on. The importance of the design is to enable the system designer or researcher to know the cost of consequence of the product on the user and developer. In that the effectiveness of the system will not be obsolete.\\
 \indent
 In this section the following tools were used to describe the system: context diagram and data flow diagram, flow chart and entity relationship diagrams.
 
 \section{Data Flow Diagram (DFD)}
 Data flow diagramming is a technique that diagrams the systems processes and the data that pass among them. The main focus of data flow diagrams is the processes or activities that are performed in the system. Data flow diagrams model objects, associations, and activities by describing how data flows between and around various objects, they illustrate how data is processed by a system in terms of inputs and outputs. They are pipelines through which packets of information flow. Data flow diagrams work on the premise that for every activity there is some communication, transference or flow that can be described as a data element.\\
 \indent
-Data flow diagrams describe what activities are occuring to fulfill a business relationship or accomplish a task, not how these activities are to be performed. It shows the logical sequence of associations and activities, not physical processes.
+Data flow diagrams describe what activities are occurring to fulfill a business relationship or accomplish a task, not how these activities are to be performed. It shows the logical sequence of associations and activities, not physical processes.
 
 \subsection{Context Diagram}
 The first DFD in every business process model, whether a manual system or a computerized system, is the context diagram. The context diagram shows the entire system in context with its environment. The context diagram shows the overall business process as just one process (i.e., the system itself) and shows the data flows to and from external entities.
@@ -255,7 +283,7 @@ The first DFD in every business process model, whether a manual system or a comp
 	\label{fig:context-flow-diagram}
 \end{figure}
 
-\subsection{Level 1 Data FLow Diagram}
+\subsection{Level 1 Data Flow Diagram}
 Level 1 DFD is an expansion of the context diagram that shows more processes and how the users interact with the system in terms of inputs and outputs. This is the detailed description of the processes that occur in the system while related to an external entity.
 
 \begin{figure} [ht]
@@ -277,6 +305,19 @@ Figure \ref{fig:context-flow-diagram} shows a flowchart representing a systemic 
 	\label{fig:flow-chart-diagram}
 \end{figure}
 
+\section{Use Case}
+Use cases are used to explain and document the interaction that is required between the user and the system to accomplish the user’s task.\\
+\indent
+Use case diagrams describe what a system does from the standpoint of an external observer. The emphasis of use case diagrams is on what a system does rather than how. They are used to show the interactions between users of the system and the system. A use case represents the several users called actors and the different ways in which they interact with the system.\\
+\indent
+Below is the use case diagram for the proposed system.
+\begin{figure} [ht]
+  \centering
+  \includegraphics[width=1.0\textwidth]{Use Case.png}
+  \caption{Use Case Diagram}
+  \label{fig:useCaseDiagram}
+\end{figure}
+
 \section{Data Modelling and Entity Relationships}
 \subsection{Data Modelling}
 A data model is a formal way of representing the data that are used and created by a system; it illustrates people, places, or things about which information is captured and how they are related to each other.\\
@@ -294,11 +335,11 @@ The entities in this application include:
 	\item Continent
 	\item State/Province
 	\item Currency
-	\item Language
+	\item Language.
 \end{itemize}
 
 \subsubsection{Relationships}
-Relationships are associations between entities and they are shown by lines that connect the entities together.
+Relationships are associations between entities, and they are shown by lines that connect the entities together.
 Figure \ref{fig:relationships} below show the description of the various relationships between the entities with their cardinalities.
 
 \begin{figure} [ht]
@@ -325,18 +366,18 @@ Where:
 
 \chapter{Implementation}
 \section{Introduction}
-Implementation is the stage in the project where the theoretical design is turned into a working system. System implementation is the phase where the application is realised. It involves careful planning, investigation of the current system and its constraints on implementation. The implementation process begins with preparing a plan for the implementation of the system and then proceeds to the activities to be carried out such as creating a mockup or wireframe and then writing the code and then on to the deployment of the application.\\
+Implementation is the stage in the project where the theoretical design is turned into a working system. System implementation is the phase where the application is realised. It involves careful planning, investigation of the current system and its constraints on implementation. The implementation process begins with preparing a plan for the implementation of the system and then proceeds to the activities to be carried out such as creating a mock-up or wireframe and then writing the code and then on to the deployment of the application.\\
 \indent
-Implementation is the final and the most important phase. The most critical stage in acheiving a successful new system is giving the users confidence that the new system will work and be effective. The system can only be implemented after thorough testing is done and it is found to be working according to the specifications.
+Implementation is the most important phase. The most critical stage in achieving a successful new system is giving the users confidence that the new system will work and be effective. The system can only be implemented after thorough testing is done and it is found to be working according to the specifications.
 
-\section{System Specification}
+\section{Technologies Used to Build the System}
 The application was built based on a REST API called ``REST Countries" which is a simple web API for getting information about the world's nations via REST calls and the API provided the information about the countries in the application.\\ 
 \indent
-The application was built by mainly using a popular JavaScript framework called \emph{Vue.js}. Vue.js is an open-source front-end JavaScript framework for building interfaces and single-page applications. It features an incrementally adpatable architecture that focuses on declarative rendering and component composition.\\ 
+The application was built by mainly using a popular JavaScript framework called \emph{Vue.js}. Vue.js is an open-source front-end JavaScript framework for building interfaces and single-page applications. It features an incrementally adaptable architecture that focuses on declarative rendering and component composition.\\ 
 \indent
 A state manager called \emph{Vuex} which is the primary state manager for Vue.js was used in the application to store data that was going to be used across the components for easy retrieval. Routing was also implemented in this project to enable the functionality of moving from one page to another and back and it was done mainly using \emph{vue-router} which is the official router for Vue.js. For the styling, \emph{SASS} which is a CSS preprocessor was used to implement the styling of the web application.\\
 \indent
-Node.js was used together with Express.js to develop the server-side of the application. Node.js which is an open-source, cross-platform, back-end, JavaScript runtime environment that executes JavaScript code outside the browser. Node.js lets developers use JavaScript to write command line tools and for server-side scripting to produce dynamic web page content before the page is sent to the user's browser.\\
+Node.js was used together with Express.js to develop the server-side of the application. Node.js which is an open-source, cross-platform, back-end, JavaScript runtime environment that executes JavaScript code outside the browser. It is a programming language that lets developers use JavaScript to write command line tools and for server-side scripting to produce dynamic web page content before the page is sent to the user's browser.\\
 \indent
 Express.js also referred to as Express, is a free and open-source back-end web application framework for Node.js. It is designed for building web applications and APIs.\\
 \indent
@@ -346,7 +387,7 @@ MongoDB was used as the database application used to store the user information.
 The application has the following pages:
 
 \subsection{Login/Register Page}
-The application has been designed to ensure that access to the application can only be granted to authenticated users. The user is required to enter a valid username and pasword before access can be granted. Upon entering the right credentials, the user is directed to relevant sections and can now use the application (see Figure \ref{fig:login_page}). If a user is not registered in the system then the user is required to register to have an account so that the user can gain access to the system (see Figure \ref{fig:register_page}).
+The application has been designed to ensure that access to the application can only be granted to authenticated users. The user is required to enter a valid username and password before access can be granted. Upon entering the right credentials, the user is directed to relevant sections and can now use the application (see Figure \ref{fig:login_page}). If a user is not registered in the system then the user is required to register to have an account so that the user can gain access to the system (see Figure \ref{fig:register_page}).
 
 \begin{figure} 
 	\centering
@@ -375,7 +416,7 @@ The home page displays all the countries in cards. It also features a search box
 \begin{figure}
 	\centering
 	\includegraphics[width=1.0\textwidth]{search.png}
-	\caption{Home Page}
+	\caption{Searching for a Country}
 	\label{fig:search}
 \end{figure}
 
@@ -390,7 +431,7 @@ When a card on the home page is clicked, the user is automatically redirected to
 \end{figure}
 
 \subsection{Colour Switcher}
-The application also features a colour switcher which enables the user to toggle a colour switch to change the the design theme of the application from light mode to dark mode (see Figure \ref{fig:darkmode}).
+The application also features a colour switcher which enables the user to toggle a colour switch to change the design theme of the application from light mode to dark mode (see Figure \ref{fig:darkmode}).
 
 \begin{figure} [ht]
 	\centering
@@ -400,7 +441,7 @@ The application also features a colour switcher which enables the user to toggle
 \end{figure}
 
 \section{Implementing Interactivity}
-This chapter focus primarily on the system implementation phase of the system development process. One of the main concerns of the implementation phase is the interface design. Therefore it is important that the interface is designed in a way that it eases user to accomplish their task by interacting with the system efficiently and effectively. A well designed interface possesses the ability to attract and change user’s perception towards a system. In this project, the system interfaces were designed by considering various interactive design elements as to promote the better interaction of user and the system.
+One of the main concerns of the implementation phase is the interface design. Therefore, it is important that the interface is designed in a way that it eases user to accomplish their task by interacting with the system efficiently and effectively. A well-designed interface possesses the ability to attract and change user’s perception towards a system. In this project, the system interfaces were designed by considering various interactive design elements as to promote the better interaction of user and the system.
 
 \chapter{System Testing}
 \section{Introduction}
@@ -417,12 +458,12 @@ The testing process is formalised by referring to three distinct goals:
 \end{itemize}
 
 \subsection{Verification}
-Verification is testing that establishes whether or not the system is correctly computing the required results and correctly implements the underlying theory. Simply stated, verification answers the questions: \emph{Have I built the system right? Is it computing the right answer?}\\
+Verification is testing that establishes whether the system is correctly computing the required results and correctly implements the underlying theory. Simply stated, verification answers the questions: \emph{Have I built the system right? Is it computing the right answer?}\\
 \indent
-The verification tests exercise each component independently and also the system as a whole; first checking that each individual component works correctly and then checking that they have been intergrated correctly.
+The verification tests exercise each component independently and also the system as a whole; first checking that each individual component works correctly and then checking that they have been integrated correctly.
 
 \subsection{Validation}
-Validation is the testing that establishes whether or not the system meets the user’s requirements. In this case, the questions are: \emph{Have I built the right system? Does it satisy the requirements?}. Comparing the system's behaviour with the original requirements and system specifications;
+Validation is the testing that establishes whether the system meets the user’s requirements. In this case, the questions are: \emph{Have I built the right system? Does it satisfy the requirements?}. Comparing the system's behaviour with the original requirements and system specifications;
 \begin{itemize}
 	\item The system is built as a web application so it can be accessed on any device
 	\item The system design is simple and interactive
@@ -431,10 +472,10 @@ Validation is the testing that establishes whether or not the system meets the u
 So in essence, it can be said that the system satisfies the major requirements.
 
 \subsection{Evaluation}
-In evaluation tests, we ask: \emph{How good is the system?} A problem encountered when building the system was how to get information about the countries, getting information personally about all the countries would have been too time tasking seeing as the time frame for working on the project was small. Therefore, an API was used and the system of using an API is What You See Is What You Get (WYSIWYG). The API used only provided a few information about the countries and did not go into detail about the information. Nevertheless, the API served to good use as it still provided some very important information about the countries that the users of the system can work with.
+In evaluation tests, we ask: \emph{How good is the system?} A problem encountered when building the system was how to get information about the countries, getting information personally about all the countries would have been too time tasking seeing as the time frame for working on the project was small. Therefore, an API was used and the system of using an API is What You See Is What You Get (WYSIWYG). The API used only provided little information about the countries and did not go into detail about the information. Nevertheless, the API served to good use as it still provided some very important information about the countries that the users of the system can work with.
 
 \section{Forms of Testing}
-There are three main forms of testing which were employed in the building of this application:
+There are four main forms of testing which were employed in the building of this application:
 
 \begin{itemize}
 	\item Unit Testing
@@ -446,7 +487,7 @@ There are three main forms of testing which were employed in the building of thi
 \subsection{Unit Testing}
 The software units in the system are modules and routines assembled and integrated to perform a specific function. This application was built by dividing each functionality into components so it was easy to perform unit tests on the application as the application was already in components.\\
 \indent
-As a part of the unit testing, the program was executed for the individual compoenents independently. This enables easy detection of errors in the coding and logic that are contained in each of the components.
+As a part of the unit testing, the program was executed for the individual components independently. This enables easy detection of errors in the coding and logic that are contained in each of the components.
 
 \subsection{Integration Testing}
 Data can be lost across any interface, one module can have adverse effects on another, sub-functions when combined may not produce the desired major functions.\\
@@ -459,23 +500,21 @@ System testing is the key factor for the success of any system. It ensures that 
 \subsubsection{Security Testing}
 This was a process that was intended to reveal flaws in the security mechanisms of the system to protect data and maintain functionality as intended. For example, authentication of the system could only allow registered users access to the system information.\\
 \indent
-Incase the user tries to log into the system using a wrong user credentials, the system shows an error message telling the user that you have input a wrong username or password and should try again or create a new account.
+In case the user tries to log into the system using a wrong user credentials, the system shows an error message telling the user that you have input a wrong username or password and should try again or create a new account.
 
 \subsection{Acceptance Testing}
 Acceptance tests are done primarily by the users. The goal is to confirm that the system is complete, meets the user requirements that prompted the system to be developed, and is acceptable to the users.
 
 \chapter{Conclusion}
 \section{Introduction}
-This chapter shows how the objectives of the study in chapter one were achieved with respect to the objectives of the system.
 Through the system analysis and design, and the implementation of the designed system, we were able to reflect the requirements of the objectives of the study.
-It gives a summary of what was done in all the chapters, outcomes, limitations, lessons learnt and recommendations made.
-This chapter also examines how the objectives of the study were addressed through the design and the implementation.\\
+This chapter gives a summary of what was done in all the chapters, outcomes, limitations, and lessons learnt.\\
 \indent
 During the development of the Rest Countries Application, a number of activities were carried out and these included;
 System analysis which specified the major requirements for the system and the best technology to use to develop the system.
-In system design, the entity relationship diagrams and data flow diagrams were used to identify entities, relationships, attributes in the system.\\
+In the system design, the entity relationship diagrams and data flow diagrams were used to identify entities, relationships, attributes in the system.\\
 \indent
-The application was built and I was exposed to practical challenges, and enhanced application of knowledge in solving real world problems.
+The application was built, and I was exposed to practical challenges, and enhanced application of knowledge in solving real world problems.
 
 \section{Limitations}
 One of the greatest limitations of the study was the time frame required for the project which was short and then the lack of detailed information from the API about the countries also served as a limitation. Also, unavailability of literature and other reading materials relating to our system also slowed down the progress of the report since there are few or limited resource of such information.
